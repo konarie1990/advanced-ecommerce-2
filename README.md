@@ -26,10 +26,13 @@ Fork, Clone, npm install, npm start
       )(_)(_)(_)(_)(_)(_)(_)(_)(_)(_)(_)(_)(\*
       )
   - ProductDetail
+
     - look for div with className of "grid_1_of_5" (in App.js)
     - take that content and place it in the ProductDetail component
     - Use PropTypes to require a prop "product"
     - Use product prop to populate the UI instead of hard coded
+
+    // map by id from state.js
 
 * SubHeader
 

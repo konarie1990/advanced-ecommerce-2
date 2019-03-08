@@ -1,15 +1,13 @@
 import React from "react";
+import products from "../state";
 
-function ProductDetail(props) {
+function ProductDetail() {
   return (
-    <div className="grid_1_of_5 images_1_of_5">
-      <img src={props.Src} />
-      <h3>{props.Title}</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, in
-        reprehenderit.
-      </p>
-      <h4>{props.Price}</h4>
+    <div id={products.id} className="grid_1_of_5 images_1_of_5">
+      <img src={products.imgUrl} />
+      <h3>{products.name}</h3>
+      <p>{products.description}</p>
+      <h4>{products.price}</h4>
       <div className="button">
         <span>
           <a href="singlepage.html">Read More</a>
