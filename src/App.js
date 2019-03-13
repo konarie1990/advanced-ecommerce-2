@@ -66,7 +66,7 @@ function App(props) {
         <ImageSlider />
         <ProductDetail />
 
-        <div className="clear"> </div>
+        {/* <div className="clear"> </div> */}
         <Footer />
       </div>
     </div>

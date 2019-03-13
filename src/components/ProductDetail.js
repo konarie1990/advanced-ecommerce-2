@@ -1,7 +1,7 @@
 import React from "react";
-import { products } from "../state";
+import PropTypes from "prop-types";
 
-function ProductDetail() {
+const ProductDetail = props => {
   return (
     <div className="content">
       <div className="products-box">
@@ -11,8 +11,8 @@ function ProductDetail() {
           </h5>
           <div className="section group">
             <div className="grid_1_of_5 images_1_of_5">
-              <img src="images/g3.png" />
-              <h3>Lorem Ipsum is simply </h3>
+              <img src="images/g1.jpg" />
+              {/* <h3>{this.props.name}</h3> */}
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, in
                 reprehenderit.
@@ -24,166 +24,33 @@ function ProductDetail() {
                 </span>
               </div>
             </div>
-            <div className="grid_1_of_5 images_1_of_5">
-              <img src="images/g1.jpg" />
-              <h3>Lorem Ipsum is simply </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, in
-                reprehenderit.
-              </p>
-              <h4>$300.00</h4>
-              <div className="button">
-                <span>
-                  <a href="singlepage.html">Read More</a>
-                </span>
-              </div>
-            </div>
-            <div className="grid_1_of_5 images_1_of_5">
-              <img src="images/g2.jpg" />
-              <h3>Lorem Ipsum is simply </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, in
-                reprehenderit.
-              </p>
-              <h4>$120.00</h4>
-              <div className="button">
-                <span>
-                  <a href="singlepage.html">Read More</a>
-                </span>
-              </div>
-            </div>
-            <div className="grid_1_of_5 images_1_of_5">
-              <img src="images/g3.png" />
-              <h3>Lorem Ipsum is simply </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, in
-                reprehenderit.
-              </p>
-              <h4>$500.00</h4>
-              <div className="button">
-                <span>
-                  <a href="singlepage.html">Read More</a>
-                </span>
-              </div>
-            </div>
-            <div className="grid_1_of_5 images_1_of_5">
-              <img src="images/g4.jpg" />
-              <h3>Lorem Ipsum is simply</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, in
-                reprehenderit.
-              </p>
-              <h4>$120.00</h4>
-              <div className="button">
-                <span>
-                  <a href="singlepage.html">Read More</a>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="products products-secondbox">
-          <h5>
-            <span>Our</span> Specials
-          </h5>
-          <div className="section group">
-            <div className="grid_1_of_5 images_1_of_5">
-              <img src="images/g1.jpg" />
-              <h3>Lorem Ipsum is simply </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, in
-                reprehenderit.
-              </p>
-              <h4>
-                <span>$600.00</span>$512.00
-              </h4>
-              <div className="button">
-                <span>
-                  <a href="singlepage.html">Read More</a>
-                </span>
-              </div>
-            </div>
-            <div className="grid_1_of_5 images_1_of_5">
-              <img src="images/g6.jpg" />
-              <h3>Lorem Ipsum is simply </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, in
-                reprehenderit.
-              </p>
-              <h4>
-                <span>$400.00</span>$352.00
-              </h4>
-              <div className="button">
-                <span>
-                  <a href="singlepage.html">Read More</a>
-                </span>
-              </div>
-            </div>
-            <div className="grid_1_of_5 images_1_of_5">
-              <img src="images/g7.png" />
-              <h3>Lorem Ipsum is simply </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, in
-                reprehenderit.
-              </p>
-              <h4>
-                <span>$300.00</span>$202.00
-              </h4>
-              <div className="button">
-                <span>
-                  <a href="singlepage.html">Read More</a>
-                </span>
-              </div>
-            </div>
-            <div className="grid_1_of_5 images_1_of_5">
-              <img src="images/g8.png" />
-              <h3>Lorem Ipsum is simply </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, in
-                reprehenderit.
-              </p>
-              <h4>
-                <span>$400.00</span>$322.00
-              </h4>
-              <div className="button">
-                <span>
-                  <a href="singlepage.html">Read More</a>
-                </span>
-              </div>
-            </div>
-            <div className="grid_1_of_5 images_1_of_5">
-              <img src="images/g1.jpg" />
-              <h3>Lorem Ipsum is simply</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, in
-                reprehenderit.
-              </p>
-              <h4>
-                <span>$700.00</span>$602.00
-              </h4>
-              <div className="button">
-                <span>
-                  <a href="singlepage.html">Read More</a>
-                </span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
+
+ProductDetail.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  price: PropTypes.string,
+  imgUrl: PropTypes.any,
+  category: PropTypes.string,
+  rating: PropTypes.number,
+  reviews: PropTypes.number
+};
+
+ProductDetail.defaultProps = {
+  id: 1,
+  name: "somebody's name",
+  description: "lorem ipsum",
+  price: "$1",
+  imgUrl: PropTypes.any,
+  category: "cool cars",
+  rating: 100,
+  reviews: 5
+};
 
 export default ProductDetail;
-
-// <div id={products.id} className="grid_1_of_5 images_1_of_5">
-//   <img src={products.imgUrl} />
-//   <h3>{products.name}</h3>
-//   <p>{products.description}</p>
-//   <h4>{products.price}</h4>
-//   <div className="button">
-//     <span>
-//       <a href="singlepage.html">Read More</a>
-//     </span>
-//   </div>
-// </div>
