@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ImageSlider from "./components/ImageSlider";
 import ProductDetail from "./components/ProductDetail";
+import { products } from "./state";
 
 function App(props) {
   return (
@@ -64,9 +65,24 @@ function App(props) {
         </div>
 
         <ImageSlider />
-        <ProductDetail />
+        <div className="clear"> </div>
 
-        {/* <div className="clear"> </div> */}
+        <div className="content">
+          <div className="products-box">
+            <div className="products">
+              <h5>
+                <span>FEATURED</span> PRODUCTS
+              </h5>
+              <div className="section group">
+                {/* {products.map(product => (
+                  <ProductDetail key={product.id} product={products} />
+                ))} */}
+                <ProductDetail product={products} />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <Footer />
       </div>
     </div>
