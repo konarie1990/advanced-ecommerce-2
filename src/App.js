@@ -75,9 +75,10 @@ function App(props) {
               </h5>
               <div className="section group">
                 {/* {products.map(product => (
-                  <ProductDetail key={product.id} product={products} />
+                  <ProductDetail key={product.id} product={product} />
                 ))} */}
 
+                <ProductDetail product={products} />
                 <ProductDetail product={products} />
               </div>
             </div>

@@ -4,9 +4,13 @@ import PropTypes from "prop-types";
 const ProductDetail = props => {
   return (
     <div className="grid_1_of_5 images_1_of_5">
-      <h3>Title: {props.product.name}</h3>
-      <p>Description: {props.product}</p>
-      <h4>Price: {props.product}</h4>
+      <img src="images/g1.jpg" />
+      <h3>Lorem Ipsum is simply {props.product} </h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, in
+        reprehenderit.
+      </p>
+      <h4>$300.00</h4>
       <div className="button">
         <span>
           <a href="singlepage.html">Read More</a>
