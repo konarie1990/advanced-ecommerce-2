@@ -77,6 +77,7 @@ function App(props) {
                 {/* {products.map(product => (
                   <ProductDetail key={product.id} product={products} />
                 ))} */}
+
                 <ProductDetail product={products} />
               </div>
             </div>
