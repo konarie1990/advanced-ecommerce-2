@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 const ProductDetail = props => {
   return (
     <div className="grid_1_of_5 images_1_of_5">
-      <img src="images/g1.jpg" />
-      <h3>Lorem Ipsum is simply {props.product} </h3>
+      <img src="images/g1.jpg" alt="" />
+      <h3>Lorem Ipsum is simply </h3>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, in
         reprehenderit.
@@ -21,7 +21,8 @@ const ProductDetail = props => {
 };
 
 ProductDetail.propTypes = {
-  product: PropTypes.object.isRequired
+  product: PropTypes.object,
+  name: PropTypes.string
 };
 
 ProductDetail.defaultProps = {

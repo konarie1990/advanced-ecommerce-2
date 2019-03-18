@@ -6,7 +6,7 @@ import ImageSlider from "./components/ImageSlider";
 import ProductDetail from "./components/ProductDetail";
 import { products } from "./state";
 
-function App(props) {
+function App() {
   return (
     <div className="App">
       <div className="wrap">
@@ -16,7 +16,7 @@ function App(props) {
           <div className="sub-header">
             <div className="logo">
               <a href="index.html">
-                <img src="images/logo.png" title="logo" />
+                <img src="images/logo.png" title="logo" alt="" />
               </a>
             </div>
             <div className="sub-header-right">
@@ -29,7 +29,8 @@ function App(props) {
                 </li>
                 <li>
                   <a href="#">
-                    CART: (EMPTY) <img src="images/cart.png" title="cart" />
+                    CART: (EMPTY){" "}
+                    <img src="images/cart.png" title="cart" alt="" />
                   </a>
                 </li>
               </ul>
@@ -74,12 +75,11 @@ function App(props) {
                 <span>FEATURED</span> PRODUCTS
               </h5>
               <div className="section group">
-                {/* {products.map(product => (
-                  <ProductDetail key={product.id} product={product} />
-                ))} */}
-
-                <ProductDetail product={products} />
-                <ProductDetail product={products} />
+                <div className="grid_1_of_5 images_1_of_5">
+                  {products.map(product => (
+                    <ProductDetail key={product.id} name={product.name} />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
