@@ -4,91 +4,58 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ImageSlider from "./components/ImageSlider";
 import ProductDetail from "./components/ProductDetail";
+import SubHeader from "./components/SubHeader";
+import TopNav from "./components/TopNav";
 import state from "./state";
+import PropTypes from "prop-types";
 // import from a separate file: if you see default in the export you can's use brackets.
 
-function App() {
-  console.log(state.products);
+function App(props) {
+  const productsArr = state.products.filter(product => {
+    let match = null;
+    if (product.category === props.currentCategory) {
+      match = product;
+    }
+    return match;
+  });
   return (
     <div className="App">
       <div className="wrap">
         <div className="header">
           <Header />
           <div className="clear"> </div>
-          <div className="sub-header">
-            <div className="logo">
-              <a href="index.html">
-                <img src="images/logo.png" title="logo" alt="" />
-              </a>
-            </div>
-            <div className="sub-header-right">
-              <ul>
-                <li>
-                  <a href="#">log in</a>
-                </li>
-                <li>
-                  <a href="#">Your account</a>
-                </li>
-                <li>
-                  <a href="#">
-                    CART: (EMPTY){" "}
-                    <img src="images/cart.png" title="cart" alt="" />
-                  </a>
-                </li>
-              </ul>
-              <input type="text" />
-              <input type="submit" value="search" />
-            </div>
-            <div className="clear"> </div>
-          </div>
+          <SubHeader />
           <div className="clear"> </div>
-          <div className="top-nav">
-            <ul>
-              <li>
-                <a href="carlights.html">car lights</a>
-              </li>
-              <li>
-                <a href="carwheels.html">Car wheels</a>
-              </li>
-              <li>
-                <a href="carbumpers.html">car bumpers</a>
-              </li>
-              <li>
-                <a href="caradsystem.html">car audiosystem</a>
-              </li>
-              <li>
-                <a href="truckbumpers.html">Truck bumpers</a>
-              </li>
-              <li>
-                <a href="contact.html">Feedback</a>
-              </li>
-              <div className="clear"> </div>
-            </ul>
-          </div>
-        </div>
+          <TopNav changeCategory={props.changeCategory} />
 
-        <ImageSlider />
-        <div className="clear"> </div>
+          <ImageSlider />
+          <div className="clear"> </div>
 
-        <div className="content">
-          <div className="products-box">
-            <div className="products">
-              <h5>
-                <span>FEATURED</span> PRODUCTS
-              </h5>
-              <div className="section group">
-                {state.products.map(product => (
-                  <ProductDetail key={product.id} product={product} />
-                ))}
+          <div className="content">
+            <div className="products-box">
+              <div className="products">
+                <h5>
+                  <span>FEATURED</span> PRODUCTS
+                </h5>
+                <div className="section group">
+                  {productsArr.map(product => (
+                    <ProductDetail key={product.id} product={product} />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <Footer />
+          <Footer />
+        </div>
       </div>
     </div>
   );
 }
+
+App.propTypes = {
+  changeCategory: PropTypes.func,
+  currentCategory: PropTypes.string
+};
 
 export default App;
