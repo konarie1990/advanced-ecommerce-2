@@ -4,9 +4,11 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ImageSlider from "./components/ImageSlider";
 import ProductDetail from "./components/ProductDetail";
-import { products } from "./state";
+import state from "./state";
+// import from a separate file: if you see default in the export you can's use brackets.
 
 function App() {
+  console.log(state.products);
   return (
     <div className="App">
       <div className="wrap">
@@ -75,11 +77,9 @@ function App() {
                 <span>FEATURED</span> PRODUCTS
               </h5>
               <div className="section group">
-                <div className="grid_1_of_5 images_1_of_5">
-                  {products.map(product => (
-                    <ProductDetail key={product.id} name={product.name} />
-                  ))}
-                </div>
+                {state.products.map(product => (
+                  <ProductDetail key={product.id} product={product} />
+                ))}
               </div>
             </div>
           </div>

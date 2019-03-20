@@ -4,13 +4,10 @@ import PropTypes from "prop-types";
 const ProductDetail = props => {
   return (
     <div className="grid_1_of_5 images_1_of_5">
-      <img src="images/g1.jpg" alt="" />
-      <h3>Lorem Ipsum is simply </h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, in
-        reprehenderit.
-      </p>
-      <h4>$300.00</h4>
+      <img src={props.product.imgUrl} />
+      <h3>{props.product.name}</h3>
+      <p>{props.product.description}</p>
+      <h4>{props.product.price}</h4>
       <div className="button">
         <span>
           <a href="singlepage.html">Read More</a>
@@ -21,12 +18,7 @@ const ProductDetail = props => {
 };
 
 ProductDetail.propTypes = {
-  product: PropTypes.object,
-  name: PropTypes.string
-};
-
-ProductDetail.defaultProps = {
-  product: "default"
+  product: PropTypes.object
 };
 
 export default ProductDetail;
